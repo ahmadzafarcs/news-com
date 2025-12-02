@@ -2,24 +2,31 @@
 
 import Link from "next/link";
 
+interface Reaction {
+    likes: number;
+    dislikes: number;
+}
+
 interface Post {
     id: string;
     title: string;
     body: string;
-    tags: string;
+    tags: string[];
     views: number;
     userId: number;
-    reactions: {
-        likes: number;
-        dislikes: number;
-    };
+    reactions: Reaction;
 }
 
-async function getPosts(): Promise<Post[]> {
+interface PostsResponse {
+    posts: Post[];
+    total: number;
+    skip: number;
+    limit: number;
+}
+
+async function getPosts(): Promise<PostsResponse> {
     const response = await fetch("https://dummyjson.com/posts");
-    if (!response.ok) {
-        throw new Error("Failed to fetch posts");
-    }
+    if (!response.ok) throw new Error("Failed to fetch posts");
     return response.json();
 }
 
