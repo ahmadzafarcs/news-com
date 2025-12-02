@@ -37,7 +37,7 @@ export default async function News() {
             <ul>
                 {posts.posts.map((post) => (
                     <Link
-                        href={`http://localhost:3000/posts/${post.id}`}
+                        href={`https://news-com-pi.vercel.app/posts/${post.id}`}
                         key={post.id}
                         className="inline-flex flex-col p-4 hover:translate-x-2 transaction-all duration-300 cursor-pointer hover:bg-stone-100 rounded-lg"
                     >
