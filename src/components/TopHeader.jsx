@@ -6,7 +6,7 @@ export default function TopHeader() {
     const [error, setError] = useState(null);
 
     useEffect(() => {
-        const API_KEY = process.env.NEXT_PUBLIC_WEATHER_API_KEY;
+        const API_KEY = process.env.WEATHER_API_KEY;
         if (!API_KEY) {
             console.error(
                 "Missing NEXT_PUBLIC_WEATHER_API_KEY environment variable",
