@@ -2,5 +2,6 @@
 @import "tailwindcss";
 
 * {
-    font-family: "EB Garamond";
+    /*font-family: "EB Garamond";*/
+    font-family: "Geist";
 }

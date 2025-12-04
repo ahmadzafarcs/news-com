@@ -34,3 +34,20 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+
+## Weather API Key
+
+The `TopHeader` component in `src/components/TopHeader.jsx` fetches weather data from WeatherAPI and requires an API key exposed to the client. Add the key to a local environment file:
+
+1. Create a file named `.env.local` at the project root (it is ignored by Git by default).
+2. Add the following line, replacing `your_api_key_here` with the key you obtain from https://www.weatherapi.com/:
+
+```
+NEXT_PUBLIC_WEATHER_API_KEY=your_api_key_here
+```
+
+3. Restart the development server (`npm run dev`, `yarn dev`, or `pnpm dev`) so Next.js picks up the new variable.
+
+Notes:
+- The `NEXT_PUBLIC_` prefix makes the variable available in client-side code. Only use public-safe keys here.
+- Keep your private keys out of source control. Do not commit `.env.local`.
